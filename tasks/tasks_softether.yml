@@ -188,10 +188,10 @@
     - skip_ansible_lint
 
 - name: SoftEther | Proceed with setup
-  command: {{ softether_home }}/vpncmd localhost /server /IN:{{ softether_init_script }}
+  command: ./vpncmd localhost /server /IN:{{ softether_init_script }}
   args:
     chdir: "{{ softether_home }}"
-    creates: "{{ softether_home }}/generated/openvpn_config.zip"
+#    creates: "{{ softether_home }}/generated/openvpn_config.zip"
   when: docker_test is not defined
   become: yes
   tags:
