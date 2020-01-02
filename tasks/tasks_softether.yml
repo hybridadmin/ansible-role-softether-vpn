@@ -100,7 +100,6 @@
     - softether
     - skip_ansible_lint
 
-
 - name: SoftEther | configure lang.config
   lineinfile:
     dest: "{{ softether_home }}/lang.config"
@@ -162,7 +161,6 @@
   when: docker_test is not defined
   tags:
     - softether
-
 
 - name: SoftEther | Template unattended setup (builtin)
   template:
