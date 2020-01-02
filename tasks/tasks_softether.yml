@@ -129,6 +129,11 @@
   become: yes
   tags:
     - softether
+    
+- name: SoftEther | Relaod Systemd Service Daemon
+  shell: systemctl daemon-reload
+  tags:
+    - softether
 
 - name: SoftEther | Reset configuration (1/4)
   service: name="vpnserver" enabled=yes  state=stopped
