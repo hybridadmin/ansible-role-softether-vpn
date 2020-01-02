@@ -10,7 +10,6 @@
       - softether
 
 - block:
-
   - name: SoftEther | Define package dependencies (Debian Family)
     set_fact:
       packages:
@@ -20,11 +19,9 @@
     when: vpnserver_present is failed
     tags:
         - softether
-
   when: ansible_os_family == "Debian"
 
 - block:
-
   - name: SoftEther | Define package dependencies (RedHat Family)
     set_fact:
       packages:
@@ -35,7 +32,6 @@
     when: vpnserver_present is failed
     tags:
         - softether
-
   when: ansible_os_family == "RedHat"
 
 - name: SoftEther | Install package dependencies
@@ -192,7 +188,7 @@
   command: ./vpncmd localhost /server /IN:{{ softether_init_script }}
   args:
     chdir: "{{ softether_home }}"
-    creates: /opt/vpnserver/generated/openvpn_config.zip
+    creates: "{{ softether_home }}/generated/openvpn_config.zip"
   when: docker_test is not defined
   become: yes
   tags:
