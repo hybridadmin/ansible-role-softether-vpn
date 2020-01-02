@@ -13,6 +13,7 @@ SecureNatDisable
 ServerCertRegenerate {{softether_fqdn}}
 ServerCertGet ./generated/cert.cer
 
+ServerCertSet /LOADCERT:"/etc/letsencrypt/live/{{ softether_fqdn }}/fullchain.pem" /LOADKEY:"/etc/letsencrypt/live/{{ softether_fqdn }}/privkey.pem"
 
 {% if softether_option_bridge %}
 BridgeCreate vpn /DEVICE:{{softether_bridge_device}} /TAP:{{softether_bridge_tap}}
