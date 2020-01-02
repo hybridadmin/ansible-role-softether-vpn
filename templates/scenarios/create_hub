@@ -1,7 +1,5 @@
 HubDelete vpn
-
 HubCreate vpn /PASSWORD:""
-
 hub vpn
 
 {% if softether_option_securenat %}
@@ -29,7 +27,6 @@ SstpEnable yes
 {% if softether_option_ipsec %}
 IPsecEnable /L2TP:{{softether_ipsec_l2tp}} /L2TPRAW:{{softether_ipsec_l2tpraw}} /ETHERIP:{{softether_ipsec_etherip}} /PSK:{{softether_ipsec_presharedkey}} /DEFAULTHUB:vpn
 {% endif %}
-
 
 {% if softether_option_openvpn %}
 OpenVpnEnable yes /PORTS:1194
