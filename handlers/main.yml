@@ -1,2 +1,5 @@
 ---
 # handlers file for sa-vpn-softether
+
+- name: sysctl reload
+  shell: sysctl -p
