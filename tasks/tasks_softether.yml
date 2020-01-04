@@ -147,15 +147,27 @@
   tags:
     - softether
 
+#- name: SoftEther | Keys in sysctl.conf (3/4)
+#  sysctl:
+#    name: "{{ item.name }}"
+#    value: "{{ item.value }}"
+#    ignoreerrors: yes
+#    state: "{{ item.state | default('present') }}"
+#    reload: "yes"
+#  with_items: "{{ softether_sysctl_conf_lines | default() }}"
+#  when: docker_test is not defined #TODO: check
+#  become: yes
+#  tags:
+#    - softether
+
 - name: SoftEther | Keys in sysctl.conf (3/4)
-  sysctl:
-    name: "{{ item.name }}"
-    value: "{{ item.value }}"
-    ignoreerrors: yes
-    state: "{{ item.state | default('present') }}"
-    reload: "yes"
-  with_items: "{{ softether_sysctl_conf_lines | default() }}"
-  when: docker_test is not defined #TODO: check
+  template:
+    src: sysctl-conf.j2
+    dest: "/etc/sysctl.d/60-softether.conf"
+    owner: root
+    group: root
+    mode: 0644
+  notify: sysctl reload
   become: yes
   tags:
     - softether
