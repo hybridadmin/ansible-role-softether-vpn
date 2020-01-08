@@ -50,5 +50,5 @@
 
   roles:
      - {
-        role: "ansible-role-softether-vpn"
+        role: "hybridadmin.softether_vpn"
        }
