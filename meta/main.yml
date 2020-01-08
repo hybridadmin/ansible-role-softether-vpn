@@ -1,5 +1,6 @@
 ---
 galaxy_info:
+  role_name: softether-vpn
   author: vyacheslav voronenko
   description: softether multi protocol vpn
   company: http://www.voronenko.info/
@@ -14,7 +15,7 @@ galaxy_info:
   # - Apache
   # - CC-BY
   license: MIT
-  min_ansible_version: 2.2.0.0
+  min_ansible_version: 2.4
   #
   # Below are all platforms currently available. Just uncomment
   # the ones that apply to your role. If you don't see your
