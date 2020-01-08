@@ -23,16 +23,20 @@ galaxy_info:
   platforms:
     - name: Ubuntu
       versions:
-        - trusty
+#        - trusty
         - xenial
         - bionic
-    - name: Fedora
+    - name: Debian
       versions:
-        - 25
+        - stretch
+        - buster 
+#    - name: Fedora
+#      versions:
+#        - 25
     - name: EL
       versions:
-        - 6
         - 7
+        - 8
 
   galaxy_tags:
     - softether
