@@ -5,7 +5,7 @@
   pre_tasks:
     - debug: msg="Pre tasks section for {{ ansible_host }}"
 
-    - name: get remote host ip 
+    - name: get remote host ip
       set_fact:
         remote_ip_address: "{{ ansible_host }}"
 
