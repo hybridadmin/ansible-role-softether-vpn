@@ -17,8 +17,8 @@
     my_softether_ipsec_presharedkey: "[1KH;+r-X#cvhpv7Y6=#;[{u"
     softether_version: "4.32-9731"
     softether_location: /opt
-    softether_vpn_users: "{{my_softether_vpn_users}}"
-    softether_ipsec_presharedkey: "{{my_softether_ipsec_presharedkey}}"
+    softether_vpn_users: "{{ my_softether_vpn_users }}"
+    softether_ipsec_presharedkey: "{{ my_softether_ipsec_presharedkey }}"
     softether_option_securenat: true
     softether_option_bridge: false
     # ============== IPSEC ===================
@@ -30,7 +30,7 @@
     # ============== OPENVPN ===================
     softether_option_openvpn: true
     softether_openvpn_port: 1194
-    softether_openvpn_config: "{{softether_home}}/generated/openvpn_config.zip"
+    softether_openvpn_config: "{{ softether_home }}/generated/openvpn_config.zip"
     # /============== OPENVPN ===================
     # ============== Bridge ===================
     softether_bridge_device: soft
