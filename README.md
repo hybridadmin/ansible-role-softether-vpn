@@ -73,7 +73,7 @@ vars:
 roles:
 
      - {
-         role: "sa-vpn-softether",
+         role: "hybridadmin.softether_vpn",
          softether_vpn_users: "{{my_softether_vpn_users}}",
          softether_ipsec_presharedkey: "{{my_softether_ipsec_presharedkey}}"
        }
@@ -96,7 +96,7 @@ vars:
 
 roles:
      - {
-         role: "sa-vpn-softether",
+         role: "hybridadmin.softether_vpn",
 
          softether_vpn_users: "{{my_softether_vpn_users}}",
          softether_ipsec_presharedkey: "{{my_softether_ipsec_presharedkey}}"
@@ -142,11 +142,11 @@ If you ever needed to setup vpnserver on your own on later stage:
 Usage with ansible galaxy workflow
 ----------------------------------
 
-If you installed the sa-vpn-softether role using the command
+If you installed the hybridadmin.softether_vpn role using the command
 
 
 `
-   ansible-galaxy install softasap.sa-vpn-softether
+   ansible-galaxy install hybridadmin.softether_vpn
 `
 
 the role will be available in the folder library/softasap.sa-vpn-softether
@@ -155,7 +155,7 @@ Please adjust the path accordingly.
 ```YAML
 
      - {
-         role: "softasap.sa-vpn-softether"
+         role: "hybridadmin.softether_vpn"
        }
 
 ```
