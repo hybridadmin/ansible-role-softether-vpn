@@ -17,6 +17,7 @@
         - gcc
         - libssl-dev
         - curl
+        - procps
     when: vpnserver_present is failed
     tags:
         - softether
@@ -109,6 +110,7 @@
     line: "{{ softether_lang }}"
     create: yes
   become: yes
+  changed_when: False
   tags:
     - softether
 
@@ -148,6 +150,7 @@
 - name: SoftEther | Reset configuration (2/4)
   file: path="{{ softether_home }}/vpn_server.config" state="absent"
   become: yes
+  changed_when: False
   tags:
     - softether
 
