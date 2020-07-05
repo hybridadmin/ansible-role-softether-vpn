@@ -36,7 +36,7 @@
         - softether
   when: ansible_os_family == "RedHat"
 
-- name: SoftEther | yum fix for [Errno 256] No more mirrors to try
+- name: SoftEther | yum fix no more mirrors to try
   shell: |
     yum clean headers && yum clean metadata && yum makecache
     yum update -y
