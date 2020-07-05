@@ -36,12 +36,6 @@
         - softether
   when: ansible_os_family == "RedHat"
 
-- name: SoftEther | yum fix no more mirrors to try
-  shell: |
-    yum clean headers && yum clean metadata && yum makecache
-    yum update -y
-  when: ansible_os_family == "RedHat"
-
 - name: SoftEther | Install package dependencies
   package: pkg="{{ item }}"
   with_items: "{{ packages }}"
