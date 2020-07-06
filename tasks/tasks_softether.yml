@@ -73,7 +73,9 @@
     - softether
 
 - name: SoftEther | Get Distribution Url
-  shell: curl --silent "https://api.github.com/repos/SoftEtherVPN/SoftEtherVPN_Stable/releases" | grep "browser_download_url.*vpnserver.*{{ softether_version }}.*linux-x64-64bit.tar.gz" | sed -E 's/.*"([^"]+)".*/\1/'
+  shell: |
+    set -o pipefail
+    curl --silent "https://api.github.com/repos/SoftEtherVPN/SoftEtherVPN_Stable/releases" | grep "browser_download_url.*vpnserver.*{{ softether_version }}.*linux-x64-64bit.tar.gz" | sed -E 's/.*"([^"]+)".*/\1/'
   register: vpnserver_url
   changed_when: False
 
