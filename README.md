@@ -1,7 +1,7 @@
 sa-vpn-softether
 ================
 
-[![Build Status](https://travis-ci.org/softasap/sa-vpn-softether.svg?branch=master)](https://travis-ci.org/softasap/sa-vpn-softether)
+[![Build Status](https://travis-ci.org/github/hybridadmin/ansible-role-softether-vpn.svg?branch=master)](https://travis-ci.org/github/hybridadmin/ansible-role-softether-vpn)
 
 
 Example of use: check box-example
