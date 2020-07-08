@@ -84,7 +84,7 @@
     #headers:
     #  Accept: "application/vnd.github.v3+json"
     dest: "/tmp/softether.txt"
-    become: true
+  become: true
 
 - name: SoftEther | Get Distribution Url
   shell: |
