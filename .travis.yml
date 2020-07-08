@@ -1,32 +1,27 @@
----
 sudo: required
 language: python
-
 env:
   global:
-    - ROLE_NAME: softether-vpn
+  - ROLE_NAME: softether-vpn
+  - secure: nD1V0JvOcQVHO1iYCZeIEw30ylFGaPrMBr064obx6aLKVIxa2WRItXALgX2nI2gtXWOggdVPiKjj9SauS/f8vaw110FrQ/MbejIknyABEOhjDy7qnlbqLSzEihZCWh2GW0v3nnPNEQdIn1O1vPh0L0kQigb6L0IMWunci9WozQeynZPHDjCLwRIFf7+/Hk84BJGAfTAT1FvRpX05AoxlNP3S3Yvch5drkPucDYvljpXyoA/sgr45AsvzqL5JfDzyF5x5wJUIelxBgr0wxRVBgRtYssfnYK+0bUNnOW4voc3li5Q+lnc9gjl2F7148UW26khvYqZf2f5OMk2OqB0xzjflC4IAd7VA8hysgkklWUxD5VTW+wbur5d7m14KPq24bYmwVRRf/79YZo+zwe7D9MbGTB6yntCw5QzVp7pqNAwIN2nqMxacl6yGZl2pLTcP367w4jwZs/7rr1RS5t9Gc5f1jMgiZI9oYft6jUg3jjudbyo9Dj/pArASzTO5HCh0QnLeAUYFbtUdXo5SQ/3TUIFMQQAPsh2WDtzGR3jdbUeXzS7PBUkOdYrui2RetgQo8k8dRkpXfmGcZkDjUYpTIqlwOd78GB9dWMmQpnhDw1lXGgTB2kCJq9OA+CiI0+ouJ+mXj5YzGNS6JXFgBqZJl8IKl5n6MZ3gGkj75pEVw6c=
+  - secure: V3lRe3NmgyNbcbEn9L64BQtcxQpJbmyBheWPzrSexZVKFf8EOCF/wS3rxLysXSbm97S0b4QfbnjAD0cqlH0XPwihRrby/XRGjYpekXaAPkKX6H6GqaVUYp3lL+DbiQjiPAk8Q9YalncwSmtFzfZeXgTsTw34LKKEVkJENMc2f/iiitvh5fMUK+iRbqhqlSJEbETlq9Q8oxN8to9Hj+3uiLW+/QSOrv48TgIwpZ1SWRGNbtjjuBDadJlPyVPn3q8TG4+CSQPVmr3IJrY++nMgo4LJX7YwdWjE3HqFHvUFY2CgK8Ehruvp+x+sh716h5ruwyrUIOEoCZEr5sH6GueCFT4mUdZTUsVJh4ni0zgkuOZAy1PKZpUK4TegJoiZyazs6pT5STY+ZRmljeytqw5D4w/9jCmAMikhfqv5Z4TET+FbIQYecfXOfGfszYZC2grmDc+ffQyVmvFUzf69j9tC2QqVuxt1dueibSATiKvMrSQOT1VONabg5YLyvu0o1l1aqRsayxeHoq6jo+k9uyI7iFNNaC98I7OjlNtWx8SEieckTIAJOXuI7vVI9Slm0PVvvfnFkuakH5TJEnpYYHRqPHWAAOMsFSrsyE/bbMRnkxiDwGOkrQ9V++8i9R9HjwQqEsUA53qcHJ6BUa91sIMvG2AdMR1C1k1t9xU9PRWPbPc=
   matrix:
-    - MOLECULE_DISTRO: centos8
-    - MOLECULE_DISTRO: centos7
-    - MOLECULE_DISTRO: ubuntu1804
-    - MOLECULE_DISTRO: ubuntu1604
-    - MOLECULE_DISTRO: debian10
-    - MOLECULE_DISTRO: debian9
-
+  - MOLECULE_DISTRO: centos8
+  - MOLECULE_DISTRO: centos7
+  - MOLECULE_DISTRO: ubuntu1804
+  - MOLECULE_DISTRO: ubuntu1604
+  - MOLECULE_DISTRO: debian10
+  - MOLECULE_DISTRO: debian9
 services: docker
-
 install:
-  - pip install molecule docker
-
+- pip install molecule docker
 before_script:
-#  - NAME=$(basename $(pwd)) ROLENAME=$(echo $NAME | sed -e s/ansible-//g) && cd .. &&  ln -fs $NAME $ROLENAME && cd $ROLENAME && pwd
-  - cd ../
-  - GALAXY_ROLE_NAME=$(echo "${ROLE_NAME}" | tr '-' '_')
-  - mv ansible-role-$ROLE_NAME hybridadmin.$GALAXY_ROLE_NAME
-  - cd hybridadmin.$GALAXY_ROLE_NAME
-
+- echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+- cd ../
+- GALAXY_ROLE_NAME=$(echo "${ROLE_NAME}" | tr '-' '_')
+- mv ansible-role-$ROLE_NAME hybridadmin.$GALAXY_ROLE_NAME
+- cd hybridadmin.$GALAXY_ROLE_NAME
 script:
-  - molecule test
-
+- molecule test
 notifications:
   webhooks: https://galaxy.ansible.com/api/v1/notifications/
