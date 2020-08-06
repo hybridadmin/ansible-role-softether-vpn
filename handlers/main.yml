@@ -5,3 +5,6 @@
   shell: |
     set -o pipefail
     sysctl -p
+  args:
+    executable: /bin/bash
+   changed_when: false
