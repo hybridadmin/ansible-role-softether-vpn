@@ -2,4 +2,6 @@
 # handlers file for sa-vpn-softether
 
 - name: sysctl reload
-  shell: sysctl -p
+  shell: |
+    set -o pipefail
+    sysctl -p

@@ -1,2 +1,4 @@
 ---
 # vars file for sa-vpn-softether
+
+git_repo_uri: "https://api.github.com/repos/SoftEtherVPN/SoftEtherVPN_Stable/releases"

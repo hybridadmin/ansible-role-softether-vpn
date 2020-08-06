@@ -11,7 +11,7 @@
           - "{{ softether_fqdn }}"
     my_softether_vpn_users:
       - {
-        name: "tinashe",
+        name: "vpm_user00001",
         password: "a5ZQtcgSR2"
       }
     my_softether_ipsec_presharedkey: "[1KH;+r-X#cvhpv7Y6=#;[{u"
