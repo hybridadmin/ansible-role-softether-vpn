@@ -15,7 +15,7 @@
         password: "a5ZQtcgSR2"
       }
     my_softether_ipsec_presharedkey: "[1KH;+r-X#cvhpv7Y6=#;[{u"
-    softether_version: "4.32-9731"
+    softether_version: "4.34-9745"
     softether_location: /opt
     softether_vpn_users: "{{ my_softether_vpn_users }}"
     softether_ipsec_presharedkey: "{{ my_softether_ipsec_presharedkey }}"
