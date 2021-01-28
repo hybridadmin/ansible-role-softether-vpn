@@ -49,6 +49,8 @@ jobs:
             tag: focal
           - image: ubuntu
             tag: bionic
+          - image: ubuntu
+            tag: xenial
           - image: debian
             tag: 10
           - image: debian
