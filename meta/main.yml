@@ -1,6 +1,6 @@
 ---
 galaxy_info:
-  role_name: softether-vpn
+  role_name: softether_vpn
   author: Tinashe Chikomo
   description: softether multi protocol vpn
   company: N/A
