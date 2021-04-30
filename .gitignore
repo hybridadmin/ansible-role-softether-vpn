@@ -1,4 +1,6 @@
-box-example/roles
-*.retry
-tempfile
-local*.sh
+.molecule
+*.log
+*.swp
+.tox
+*.*~
+.cache
