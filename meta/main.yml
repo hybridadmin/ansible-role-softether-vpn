@@ -1,7 +1,7 @@
 ---
 galaxy_info:
   role_name: softether_vpn
-  author: Tinashe Chikomo
+  author: hybridadmin
   description: softether multi protocol vpn
   company: N/A
   # If the issue tracker for your role is not on github, uncomment the
