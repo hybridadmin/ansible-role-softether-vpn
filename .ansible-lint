@@ -7,3 +7,5 @@ skip_list:
 
 warn_list:  # or 'skip_list' to silence them completely
   - internal-error  # Unexpected internal error.
+  - experimental  # all rules tagged as experimental
+  - ignore-errors  # Use failed_when and specify error conditions instead of using ignore_errors.
