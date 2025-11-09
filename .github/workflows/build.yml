@@ -30,4 +30,4 @@ jobs:
     with:
       distro_image: '${{ matrix.distro.image }}'
       distro_tag: '${{ matrix.distro.tag }}'
-      working_directory: 'hybridadmin.fancy_console'
+      working_directory: 'hybridadmin.softether_vpn'
