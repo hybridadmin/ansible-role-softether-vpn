@@ -2,7 +2,7 @@
 - name: Converge
   hosts: all
   vars:
-    softether_fqdn: "vpn.chikomo.net"
+    softether_fqdn: "vpn.server.net"
     generate_ssl_cert: false
     option_add_to_path: true
     certbot_certs:

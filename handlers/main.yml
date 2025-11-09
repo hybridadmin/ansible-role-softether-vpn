@@ -7,4 +7,4 @@
     sysctl -p
   args:
     executable: /bin/bash
-#   changed_when: false
+  changed_when: false

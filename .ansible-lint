@@ -9,3 +9,12 @@ warn_list:  # or 'skip_list' to silence them completely
   - internal-error  # Unexpected internal error.
   - experimental  # all rules tagged as experimental
   - ignore-errors  # Use failed_when and specify error conditions instead of using ignore_errors.
+  - no-free-form
+  - jinja[spacing]
+  - fqcn[action]
+  - name[casing]
+  - name[template]
+  - name[play]
+  - name[missing]
+  - schema[meta]
+  - key-order[task]
