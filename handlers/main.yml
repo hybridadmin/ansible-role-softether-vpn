@@ -4,7 +4,7 @@
 - name: sysctl reload
   shell: |
     set -o pipefail
-    sysctl -p
+    sysctl -p /etc/sysctl.d/60-softether.conf
   args:
     executable: /bin/bash
-#   changed_when: false
+  changed_when: false
